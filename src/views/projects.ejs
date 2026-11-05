@@ -2,10 +2,18 @@
 <main class="container">
     <h1><%= title %></h1>
     <h2>Upcoming Service Projects</h2>
-    <ul class="project-list">
-        <li><strong>Park Cleanup</strong> - Join us to clean up local parks and make them beautiful!</li>
-        <li><strong>Food Drive</strong> - Help collect and distribute food to those in need.</li>
-        <li><strong>Community Tutoring</strong> - Volunteer to tutor students in various subjects.</li>
-    </ul>
+    
+    <% if (typeof projects !== 'undefined' && projects.length > 0) { %>
+        <ul class="project-list">
+            <% projects.forEach((project) => { %>
+                <li>
+                    <strong><%= new Date(project.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) %>: <%= project.title %> (<%= project.organization_name %>)</strong><br>
+                    <span><%= project.description %> - <%= project.location %></span>
+                </li>
+            <% }) %>
+        </ul>
+    <% } else { %>
+        <p>No service projects found.</p>
+    <% } %>
 </main>
 <%- include('partials/footer') %>

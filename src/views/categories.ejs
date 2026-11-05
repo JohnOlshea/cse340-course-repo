@@ -2,11 +2,12 @@
 <main class="container">
     <h1><%= title %></h1>
     <p>Browse service projects by category:</p>
+    
     <div class="category-grid">
         <% categories.forEach((category) => { %>
             <div class="category-card">
-                <h3><%= category %></h3>
-                <p>Explore <%= category.toLowerCase() %> service opportunities in your community.</p>
+                <h3><%= category.name %></h3>
+                <p>Explore <%= category.name.toLowerCase() %> service opportunities in your community.</p>
             </div>
         <% }) %>
     </div>
