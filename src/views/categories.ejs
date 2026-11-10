@@ -6,7 +6,7 @@
     <div class="category-grid">
         <% categories.forEach((category) => { %>
             <div class="category-card">
-                <h3><%= category.name %></h3>
+                <h3><a href="/category/<%= category.category_id %>"><%= category.name %></a></h3>
                 <p>Explore <%= category.name.toLowerCase() %> service opportunities in your community.</p>
             </div>
         <% }) %>
