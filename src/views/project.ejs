@@ -14,7 +14,14 @@
                 <a class="category-tag" href="/category/<%= category.category_id %>"><%= category.name %></a>
             <% }) %>
         </p>
+    <% } else { %>
+        <p><strong>Categories:</strong> None assigned yet.</p>
     <% } %>
+
+    <p>
+        <a href="/edit-project/<%= project.project_id %>" class="btn btn-edit">Edit Project</a>
+        <a href="/assign-categories/<%= project.project_id %>" class="btn btn-edit">Edit Categories</a>
+    </p>
 
     <p><a href="/projects">← Back to Upcoming Projects</a></p>
 </main>

@@ -20,3 +20,17 @@
             </nav>
         </div>
     </header>
+    
+    <div class="container flash-wrap">
+        <% const messages = flash(); %>
+        <% Object.keys(messages).forEach(type => { %>
+            <% if (messages[type].length > 0) { %>
+                <% messages[type].forEach(msg => { %>
+                    <div class="alert <%= type %>" role="alert">
+                        <span class="alert-icon" aria-hidden="true"></span>
+                        <span><%= msg %></span>
+                    </div>
+                <% }); %>
+            <% } %>
+        <% }); %>
+    </div>

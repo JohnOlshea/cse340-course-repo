@@ -4,6 +4,8 @@
 
     <h2><%= categoryDetails.name %></h2>
 
+    <p><a href="/edit-category/<%= categoryDetails.category_id %>" class="btn btn-edit">Edit Category</a></p>
+
     <h3>Service Projects</h3>
     <% if (projects.length > 0) { %>
         <ul class="project-list">
